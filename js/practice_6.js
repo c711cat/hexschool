@@ -1,10 +1,7 @@
 var i
-
-function sayhello(){
-  for( i = 0; i < 100; i++){
-    console.log('你好');
+function sayhi (n) {
+  for (i = 0; i < n; i++) {
+    console.log('你好')
   }
-  
 }
-
-sayhello();
+sayhi(100)
