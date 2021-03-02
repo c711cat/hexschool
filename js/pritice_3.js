@@ -1,3 +1,6 @@
+//function{...}內的程式碼執行完後就清除了 - 在function內的var設定的變數:區域變數
+//在function{...}外的var為全域變數，不會被清除，不一定要寫在function上或下面
+//function優先執行，不論寫在上面或下面
 //飢餓指數設定1~10分的選擇,若飢餓指數12時會選擇吃什麼東西
 var hungry = 12;
 function eat(food){
