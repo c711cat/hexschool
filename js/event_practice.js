@@ -44,7 +44,7 @@ box_el.addEventListener(
     alert('box')
     console.log('box')
   },
-  false
+  true
 )
 
 var body_el = document.querySelector('.body')
@@ -54,7 +54,8 @@ body_el.addEventListener(
     alert('body')
     console.log('body')
   },
-  false
+  true
 )
-//false - 從指定元素往外找
-//true = 從最外層找到指定元素
+//false (事件氣泡 - event Bubbling) - 從指定元素往外找 - 先顯示box，再顯示body，第三個參數若不寫時，預設是false
+//true (事件捕捉 - event Capturing) = 從最外層找到指定元素- 先顯示body，再顯示box
+//看需求去設定
