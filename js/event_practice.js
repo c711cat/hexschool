@@ -36,3 +36,25 @@ btnAdd_el.addEventListener(
   },
   false
 )
+
+var box_el = document.querySelector('.box')
+box_el.addEventListener(
+  'click',
+  function () {
+    alert('box')
+    console.log('box')
+  },
+  false
+)
+
+var body_el = document.querySelector('.body')
+body_el.addEventListener(
+  'click',
+  function () {
+    alert('body')
+    console.log('body')
+  },
+  false
+)
+//false - 從指定元素往外找
+//true = 從最外層找到指定元素
