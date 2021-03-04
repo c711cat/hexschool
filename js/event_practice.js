@@ -59,4 +59,12 @@ body_el.addEventListener(
 )
 //false (事件氣泡 - event Bubbling) - 從指定元素往外找 - 先顯示box，再顯示body，第三個參數若不寫時，預設是false
 //true (事件捕捉 - event Capturing) = 從最外層找到指定元素- 先顯示body，再顯示box
-//看需求去設定
+
+var link_el = document.querySelector('.link')
+link_el.addEventListener('click', function (e) {
+  //取消元素默認行為 ↓
+  //原本點連結會跳轉到指定網頁
+  //submit 按鈕，先透過我的JS去查詢表單有無錯誤，POST去傳送
+  e.preventDefault()
+  console.log('test')
+})
