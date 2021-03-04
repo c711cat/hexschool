@@ -40,11 +40,12 @@ btnAdd_el.addEventListener(
 var box_el = document.querySelector('.box')
 box_el.addEventListener(
   'click',
-  function () {
+  function (e) {
+    e.stopPropagation() //加上這一行，停止往下去找，只會找第一層就停止了的語法(終止冒泡事件)
     alert('box')
     console.log('box')
   },
-  true
+  false
 )
 
 var body_el = document.querySelector('.body')
@@ -54,7 +55,7 @@ body_el.addEventListener(
     alert('body')
     console.log('body')
   },
-  true
+  false
 )
 //false (事件氣泡 - event Bubbling) - 從指定元素往外找 - 先顯示box，再顯示body，第三個參數若不寫時，預設是false
 //true (事件捕捉 - event Capturing) = 從最外層找到指定元素- 先顯示body，再顯示box
