@@ -97,5 +97,17 @@ var country = [
     place: '苓雅區'
   }
 ]
+var countryLen = country.length
+function updateList (e) {
+  var select = e.target.value
+  var str = ''
+  var i
+  for (i = 0; i < countryLen; i++) {
+    if (select == country[i].place) {
+      str += '<li>' + country[i].farmer + '</li>'
+    }
+  }
+  areaList_el.innerHTML = str
+}
 //監聽下拉是選單做的變更選擇時會觸發change事件 : addEventListener('change')
-area.addEventListener('change',updateList,false);
+area.addEventListener('change', updateList, false)
