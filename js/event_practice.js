@@ -79,3 +79,20 @@ header_el.addEventListener(
   },
   false
 )
+
+var area = document.getElementById('areaId')
+var areaList_el = document.querySelector('.areaList')
+var country = [
+  {
+    farmer: 'Allen',
+    place: '前鎮區'
+  },
+  {
+    farmer: 'Ben',
+    place: '苓雅區'
+  },
+  {
+    farmer: 'Candy',
+    place: '苓雅區'
+  }
+]
