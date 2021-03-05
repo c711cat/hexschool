@@ -96,3 +96,5 @@ var country = [
     place: '苓雅區'
   }
 ]
+//監聽下拉是選單做的變更選擇時會觸發change事件 : addEventListener('change')
+area.addEventListener('change',updateList,false);
