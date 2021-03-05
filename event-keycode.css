@@ -52,7 +52,7 @@ html{
     
 }
 body{
-    background-image: url('../img/map.png');
+    background-image: url('images/map.png');
     background-repeat: no-repeat;
     background-size: 100% 100%;
     background-position: bottom ;
