@@ -1,10 +1,10 @@
-function compare(a, b) {
-  if () {
-    console.log('')
+function compare (a, b) {
+  if (a === b) {
+    console.log('一樣')
   } else {
-    console.log('')
+    console.log('不一樣')
   }
 }
 
-compare('ooo', 'xxx') // 不一樣
-compare('ooo', 'ooo') // 一樣
+compare('111', '222') // 不一樣
+compare('111', '111') // 一樣
