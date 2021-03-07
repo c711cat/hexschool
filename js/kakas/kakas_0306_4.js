@@ -23,7 +23,11 @@ function output_star (n) {
 
 //練習四：寫一個能回傳 n 個 * 的函式
 function output_star (n) {
-  return n + '個*'
+  for (i = 0; i < n; i++) {
+    var i
+    console.log('*')
+  }
+  return i + '個*'
 }
 
 //練習五：寫一個 function, 可以輸入一個字母，並回傳是否為大寫字母
