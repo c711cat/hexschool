@@ -1,3 +1,44 @@
+// 1 + 2 + ... + n
+
+//function sum(n) {
+//var result = 1
+// n = 4
+// 1 + 2 + 3 + 4
+// result = result + 0
+// result = result + 1
+// result = result + 2
+// result = result + 3
+// result = result + 4
+
+//for(i = 0; i <= 4; i++) {
+//  result = result + i -> result += i
+// }
+//return result
+//}
+
+//sum(1) // 1
+//sum(2) // 1 + 2
+//sum(3) // 1 + 2 + 3
+//sum(4) // 1 + 2 + 3 + 4
+
+//function star(n) {
+// n = 4
+
+//}
+//star(0) ''
+//star(1) '' + '*'
+//star(2) '' + '*' + '*'
+//star(3) '' + '*' + '*' + '*'
+//star(4) '' + '*' + '*' + '*' + '*'
+// 跑回圈時的樣子 ↓
+// var str = ''
+// str + '*' -> '*'
+// str + '*' -> '**'
+// str + '*' -> '***'
+// str + '*' -> '****'
+//每次都有跑一次 str + '*' ，所以可以讓這個每次自己加一次，可寫成 str += '*'
+//最後再把結果印出或回傳，結果要在function大括號外面，不然會只跑一次就印出了
+
 //練習一：請用 for loop，印出 1~9
 var i
 for (i = 0; i < 9; i++) {
@@ -15,19 +56,21 @@ function output (n) {
 //練習三：寫一個能夠印出 n 個 * 的函式
 function output_star (n) {
   var i
-  var star = '*'
+  var str = ''
   for (i = 0; i < n; i++) {
-    console.log(star)
+    str += '*'
   }
+  console.log(str)
 }
 
 //練習四：寫一個能回傳 n 個 * 的函式
 function output_star (n) {
+  var str = ''
+  var i
   for (i = 0; i < n; i++) {
-    var i
-    console.log('*')
+    str += '*'
   }
-  return i + '個*'
+  return str
 }
 
 //練習五：寫一個 function, 可以輸入一個字母，並回傳是否為大寫字母
