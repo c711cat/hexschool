@@ -105,18 +105,21 @@ var english = [
 var i
 var en_len = english.length
 
+var result
+
 function abc (n) {
   for (i = 0; i < en_len; i++) {
     if (n == english[i]) {
-      console.log('是大寫字母')
-      break
-    } else if (n !== english[i]) {
-      console.log('不是大寫字母')
+      result = true
       break
     }
   }
+
+  if (result == true) return 'yes'
+  else return 'not'
 }
 
+//key入一個值，從第一個值開始比對，比到符合的出現'yes'，在for裡面跑完比對不到則出現'not'
 //練習六：寫一個 function, 可以傳入一個字串，並且回傳第一個大寫字母
 //練習七：寫一個 function, 可以傳入一個數字陣列及 n，並回傳陣列裡面所有小於 n 的數量
 //練習八：寫一個 function, 可以傳入一個數字陣列及 n, 並回傳陣列裡面所有小於 n 的數的總和
