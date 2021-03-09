@@ -120,7 +120,44 @@ function abc (n) {
 }
 
 //key入一個值，從第一個值開始比對，比到符合的出現'yes'，在for裡面跑完比對不到則出現'not'
+
 //練習六：寫一個 function, 可以傳入一個字串，並且回傳第一個大寫字母
-//練習七：寫一個 function, 可以傳入一個數字陣列及 n，並回傳陣列裡面所有小於 n 的數量
-//練習八：寫一個 function, 可以傳入一個數字陣列及 n, 並回傳陣列裡面所有小於 n 的數的總和
-//練習九：寫一個 function, 可以傳入一個數字陣列及 n, 並回傳陣列裡面所有小於 n 的數字陣列
+
+findCapital('aaABC') // -> 'A'
+findCapital('aaaa') // -> ''
+findCapital('BaABC') // -> 'B'
+findCapital('aa C') // -> 'C'
+findCapital('  aa ABC') // -> 'A'
+
+//練習七：寫一個 function, 可以傳入一個數字陣列及 n，並回傳陣列裡面所有小於 n 的"數量"
+var numbers = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100]
+var num_len = numbers.length
+function small_total (n) {
+  var i
+  for (i = 0; i < num_len; i++) {
+    if (numbers[i] < n) {
+    }
+  }
+}
+
+findNumOfNumbersLessThanN([1, 2, 3, 4], 3) // 2
+findNumOfNumbersLessThanN([1, 3, 5, 7, 2, 1], 7) // 5
+
+//練習八：寫一個 function, 可以傳入一個數字陣列及 n, 並回傳陣列裡面所有小於 n 的數的"總和"
+
+//練習九：寫一個 function, 可以傳入一個數字陣列及 n, 並回傳陣列裡面所有小於 n 的數字"陣列"
+var numbers = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100]
+var num_len = numbers.length
+function num (n) {
+  var i
+  for (i = 0; i < num_len; i++) {
+    var small = numbers[i]
+    if (numbers[i] < n) {
+      small
+      console.log(small)
+    }
+  }
+}
+
+arrayOfNumbersLessThanN([1, 2, 3, 4], 3) // [1, 2]
+arrayOfNumbersLessThanN([1, 3, 5, 7, 2, 1], 7) // [1, 3, 5, 2, 1]
