@@ -25,14 +25,15 @@ var country = [
     farmer: 'Vivi'
   }
 ]
-localStorage.setItem('countryItem', country)
+var countryString = JSON.stringify(country)
+localStorage.setItem('countryItem', countryString)
 //把陣列資料存入localStorage中，
 //寫法的意思:key的名稱為countryItem，把上述陣列儲存進去，打入陣列的名稱country
 //因為目前陣列的資料是字串(用console.log(typeof(...))去查詢目前的資料是什麼屬性
 //利用下方語法 將陣列修正為字串，宣告一個變數存取，
 
 //JSON.stringify(country) -> JSON 將 ARRAY 的資料-陣列名稱轉為字串的意思
-var countryString = JSON.stringify(country)
+
 //可以用console.log去查詢是否已經變成字串
 //console.log(countryString)
 
