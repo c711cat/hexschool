@@ -123,41 +123,60 @@ function abc (n) {
 
 //練習六：寫一個 function, 可以傳入一個字串，並且回傳第一個大寫字母
 
+function findCapital (str) {
+  var i
+  for (i = 0; i < str.length; i++) {
+    if (str[i] >= 'A' && str[i] <= 'Z') {
+      return str[i]
+    }
+  }
+}
+
 findCapital('aaABC') // -> 'A'
-findCapital('aaaa') // -> ''
+findCapital('aaaa') // -> ''  沒有跑出'' 只跑出undefined
 findCapital('BaABC') // -> 'B'
 findCapital('aa C') // -> 'C'
 findCapital('  aa ABC') // -> 'A'
 
 //練習七：寫一個 function, 可以傳入一個數字陣列及 n，並回傳陣列裡面所有小於 n 的"數量"
-var numbers = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100]
-var num_len = numbers.length
-function small_total (n) {
-  var i
-  for (i = 0; i < num_len; i++) {
-    if (numbers[i] < n) {
-    }
-  }
-}
 
 findNumOfNumbersLessThanN([1, 2, 3, 4], 3) // 2
 findNumOfNumbersLessThanN([1, 3, 5, 7, 2, 1], 7) // 5
 
-//練習八：寫一個 function, 可以傳入一個數字陣列及 n, 並回傳陣列裡面所有小於 n 的數的"總和"
-
-//練習九：寫一個 function, 可以傳入一個數字陣列及 n, 並回傳陣列裡面所有小於 n 的數字"陣列"
-var numbers = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100]
-var num_len = numbers.length
-function num (n) {
+function findNumOfNumbersLessThanN (a, n) {
   var i
-  for (i = 0; i < num_len; i++) {
-    var small = numbers[i]
-    if (numbers[i] < n) {
-      small
-      console.log(small)
+  var array = []
+  for (i = 0; i < a.length; i++) {
+    if (a[i] < n) {
+      array[i] += a[i]
+      var arrayLen = array.length
     }
   }
+  console.log(arrayLen)
 }
+//練習八：寫一個 function, 可以傳入一個數字陣列及 n, 並回傳陣列裡面所有小於 n 的數的"總和"
+function findNumOfNumbersLessThanNAndSum (a, n) {
+  var i
+  var total = 0
+  for (i = 0; i < a.length; i++) {
+    if (a[i] < n) {
+      total += a[i]
+    }
+  }
+  return total
+}
+//練習九：寫一個 function, 可以傳入一個數字陣列及 n, 並回傳陣列裡面所有小於 n 的數字"陣列"
 
 arrayOfNumbersLessThanN([1, 2, 3, 4], 3) // [1, 2]
 arrayOfNumbersLessThanN([1, 3, 5, 7, 2, 1], 7) // [1, 3, 5, 2, 1]
+
+function arrayOfNumbersLessThanN (a, n) {
+  var i
+  var array = []
+  for (i = 0; i < a.length; i++) {
+    if (a[i] < n) {
+      array[i] = a[i]
+    }
+  }
+  return array
+}
