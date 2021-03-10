@@ -41,15 +41,15 @@
 
 //練習一：請用 for loop，印出 1~9
 var i
-for (i = 0; i < 9; i++) {
-  console.log(i + 1)
+for (i = 1; i < 10; i++) {
+  console.log(i)
 }
 
 //練習二：寫一個能夠印出 1~n 的 function
 function output (n) {
   var i
-  for (i = 0; i < n; i++) {
-    console.log(i + 1)
+  for (i = 1; i <= n; i++) {
+    console.log(i)
   }
 }
 
@@ -130,6 +130,7 @@ function findCapital (str) {
       return str[i]
     }
   }
+  return ''
 }
 
 findCapital('aaABC') // -> 'A'
@@ -146,14 +147,15 @@ findNumOfNumbersLessThanN([1, 3, 5, 7, 2, 1], 7) // 5
 function findNumOfNumbersLessThanN (a, n) {
   var i
   var array = []
+
   for (i = 0; i < a.length; i++) {
     if (a[i] < n) {
-      array[i] += a[i]
-      var arrayLen = array.length
+      array.push(a[i])
     }
   }
-  console.log(arrayLen)
+  return array.length
 }
+
 //練習八：寫一個 function, 可以傳入一個數字陣列及 n, 並回傳陣列裡面所有小於 n 的數的"總和"
 function findNumOfNumbersLessThanNAndSum (a, n) {
   var i
@@ -175,7 +177,7 @@ function arrayOfNumbersLessThanN (a, n) {
   var array = []
   for (i = 0; i < a.length; i++) {
     if (a[i] < n) {
-      array[i] = a[i]
+      array.push(a[i])
     }
   }
   return array
