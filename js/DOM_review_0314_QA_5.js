@@ -18,3 +18,10 @@ for (i = 0; i < farmsLen; i++) {
   str += list
 }
 farmersNameEl.innerHTML = str
+
+var farmersNameListEl = document.querySelector('.farmersNameList')
+for (i = 0; i < farmsLen; i++) {
+  var NameList = farms[i].farmer
+  str += NameList
+}
+farmersNameListEl.appendChild() = str
