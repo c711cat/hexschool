@@ -14,8 +14,7 @@ var str = ''
 var i
 
 for (i = 0; i < farmsLen; i++) {
-  str += farms[i].farmer
+  var list = '<li>' + farms[i].farmer + '</li>'
+  str += list
 }
-console.log(str)
-
-farmersNameEl.innerHTML = farms[0].farmer
+farmersNameEl.innerHTML = str
