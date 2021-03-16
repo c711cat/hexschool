@@ -8,6 +8,7 @@ var farms = [
     dogs: ['皮皮']
   }
 ]
+//innerHTML寫法
 var farmersNameEl = document.querySelector('.farmersName')
 var farmsLen = farms.length
 var str = ''
@@ -19,9 +20,12 @@ for (i = 0; i < farmsLen; i++) {
 }
 farmersNameEl.innerHTML = str
 
+
+//appendChild寫法
 var farmersNameListEl = document.querySelector('.farmersNameList')
+var i
 for (i = 0; i < farmsLen; i++) {
-  var NameList = farms[i].farmer
-  str += NameList
+  var farmersNameList_createEl = document.createElement('li')
+  farmersNameList_createEl.textContent = farms[i].farmer
+  farmersNameListEl.appendChild(farmersNameList_createEl)
 }
-farmersNameListEl.appendChild() = str
