@@ -20,7 +20,6 @@ for (i = 0; i < farmsLen; i++) {
 }
 farmersNameEl.innerHTML = str
 
-
 //appendChild寫法
 var farmersNameListEl = document.querySelector('.farmersNameList')
 var i
@@ -28,4 +27,13 @@ for (i = 0; i < farmsLen; i++) {
   var newEl = document.createElement('li')
   newEl.textContent = farms[i].farmer
   farmersNameListEl.appendChild(newEl)
+}
+
+//所有狗的名字印在網頁上
+var dogsNameEl = document.querySelector('.dogsName')
+var i
+for (i = 0; i < farmsLen; i++) {
+  var newDogsEl = document.createElement('li')
+  newDogsEl.textContent = farms[i].dogs
+  dogsNameEl.appendChild(newDogsEl)
 }
