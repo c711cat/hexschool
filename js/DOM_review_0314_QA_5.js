@@ -25,7 +25,7 @@ farmersNameEl.innerHTML = str
 var farmersNameListEl = document.querySelector('.farmersNameList')
 var i
 for (i = 0; i < farmsLen; i++) {
-  var farmersNameList_createEl = document.createElement('li')
-  farmersNameList_createEl.textContent = farms[i].farmer
-  farmersNameListEl.appendChild(farmersNameList_createEl)
+  var newEl = document.createElement('li')
+  newEl.textContent = farms[i].farmer
+  farmersNameListEl.appendChild(newEl)
 }
