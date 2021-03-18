@@ -32,8 +32,12 @@ for (i = 0; i < farmsLen; i++) {
 //所有狗的名字印在網頁上
 var dogsNameEl = document.querySelector('.dogsName')
 var i
+var j
 for (i = 0; i < farmsLen; i++) {
-  var newDogsEl = document.createElement('li')
-  newDogsEl.textContent = farms[i].dogs
-  dogsNameEl.appendChild(newDogsEl)
+  var dogsLen = farms[i].dogs.length
+  for (j = 0; j < dogsLen; j++) {
+    var newDogsEl = document.createElement('li')
+    newDogsEl.textContent = farms[i].dogs[j]
+    dogsNameEl.appendChild(newDogsEl)
+  }
 }
