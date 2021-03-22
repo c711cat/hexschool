@@ -17,11 +17,16 @@ var farms = [
 var areaEl = document.querySelector('.area')
 var i
 var farmsLen = farms.length
-
+var listEl = document.querySelector('.list')
 areaEl.addEventListener(
   'change',
   function (e) {
-    
+    for (i = 0; i < farmsLen; i++) {
+      var newEl = document.createElement('li')
+      if (farms[i].country == '前鎮區') {
+        console.log(farms[i].farmer)
+      }
+    }
   },
   false
 )
