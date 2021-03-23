@@ -1,4 +1,4 @@
-var btnEl = document.querySelector('.btn_Add')
+var btnEl = document.querySelector('.btn-add')
 
 btnEl.addEventListener(
   'click',
