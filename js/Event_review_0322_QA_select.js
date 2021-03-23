@@ -13,20 +13,38 @@ var farms = [
     country: '苓雅區'
   }
 ]
-
 var areaEl = document.querySelector('.area')
-var i
 var farmsLen = farms.length
+var i
 var listEl = document.querySelector('.list')
 areaEl.addEventListener(
   'change',
-  function (e) {
+  function changeSelect (e) {
+    var str = '' //必須在function裡面
+    var select = e.target.value //必須在function裡面
     for (i = 0; i < farmsLen; i++) {
-      var newEl = document.createElement('li')
-      if (farms[i].country == '前鎮區') {
-        console.log(farms[i].farmer)
+      if (select == farms[i].country) {
+        str += '<li>' + farms[i].farmer + '</li>'
+        console.log(str)
       }
     }
+    listEl.innerHTML = str
   },
   false
 )
+
+// function changeSelect (e) {
+//   var listEl = document.querySelector('.list')
+//   var select = e.target.value
+//   for (i = 0; i < farmsLen; i++) {
+//     if (select == farms[i].country) {
+//       var newEl = document.createElement('li')
+//       newEl.textContent = farms[i].farmer
+//       console.log(farms[i].farmer)
+//      listEl.appendChild(newEl)
+//     }
+
+//   }
+// }
+
+// areaEl.addEventListener('change', changeSelect, false)
