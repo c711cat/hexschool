@@ -1,4 +1,8 @@
 var btnEl = document.querySelector('.btn')
-btnEl.onclick = function () {
-  alert('123')
-}
+btnEl.addEventListener(
+  'click',
+  function (e) {
+    alert('123')
+  },
+  false
+)
