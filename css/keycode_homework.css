@@ -1,0 +1,13 @@
+.rocket-wrap{
+  display: flex;
+  height: 750px;
+  align-items: flex-end;
+}
+
+.rocket1{
+ padding-right: 30px;
+}
+.rocket2{
+  padding-right: 30px;
+}
+
