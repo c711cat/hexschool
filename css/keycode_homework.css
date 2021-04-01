@@ -1,11 +1,18 @@
-.rocket-wrap{
+body{
+  background-image:url('../images/map.png');
+  background-size: 100%;
+  background-repeat: no-repeat;
+  
+}
+.rocket-wrap{ 
   display: flex;
-  height: 750px;
   align-items: flex-end;
+  height: 700px;
 }
 
 .rocket1{
  padding-right: 30px;
+ 
 }
 .rocket2{
   padding-right: 30px;
