@@ -3,18 +3,26 @@ body{
   background-size: 100%;
   background-repeat: no-repeat;
   
-}
-.rocket-wrap{ 
-  display: flex;
-  align-items: flex-end;
-  height: 700px;
+  
 }
 
+
 .rocket1{
- padding-right: 30px;
- 
+  position: absolute;
+  transition: all 1s ;
+  bottom: 0px;
+  
 }
 .rocket2{
-  padding-right: 30px;
+  position: absolute;
+  transition: all 1s ;
+  bottom: 0px;
+  left: 300px;
+}
+.rocket3{
+  position: absolute;
+  transition: all 1s ;
+  bottom: 0px;
+  left: 600px;
 }
 
