@@ -3,12 +3,13 @@ var btnEl = document.querySelector('.btn')
 btnEl.addEventListener(
   'click',
   function (e) {
+    e.stopPropagation()
     alert('add-1')
   },
   false
 )
-e.stopPropagation()
-btnEl.addEventListener(
+var bodyEl = document.querySelector('.body')
+bodyEl.addEventListener(
   'click',
   function (e) {
     alert('add-2')
