@@ -16,18 +16,20 @@ var data = JSON.parse(localStorage.getItem('toDoList')) || []
 //用btn綁定監聽，點按鈕去觸發增加代辦事項進去localStorage中
 
 //(2)updateList
-//用ul綁定監聽，點按鈕後，觸發從localStorage的中取出資料呈現到網頁上
+//不須綁定，只要寫一個function放在對的位置去執行即可
 
 //(3)deleList + addEventListener
+//綁定ul，監聽ul中的刪除連結被點擊後，去執行刪除代辦事項的動作
 
 btn.addEventListener('click', addList, false)
-ul.addEventListener('click', updateList, false)
+ul.addEventListener('click', deleList, false)
 updateList(data)
 
 function addList (e) {
-  e.preventDefault() //不知道要寫這個的用意?
+  e.preventDefault() //不寫此行會有送出的預設行為
   var text = document.querySelector('.text').value
   var todo = { content: text }
+  console.log(data)
   data.push(todo)
   updateList(data)
   localStorage.setItem('toDoList', JSON.stringify(data))
@@ -45,11 +47,11 @@ function updateList (items) {
       items[i].content +
       '</span></li>'
   }
-  list.innerHTML = str
+  ul.innerHTML = str
 }
 
 function deleList (e) {
-  e.preventDefault() //不知為何寫這個?
+  e.preventDefault() //不寫此行會有跳轉頁面行為
   if (e.target.nodeName !== 'A') {
     return
   }
