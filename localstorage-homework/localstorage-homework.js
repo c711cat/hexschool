@@ -60,3 +60,8 @@ function updateList (items) {
   JSON.parse(localStorage.getItem('toDoList'))
   ul.innerHTML = str
 }
+
+ul.addEventListener('click',deleList,false)
+function deleList(e){
+  
+}
