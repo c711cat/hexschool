@@ -29,3 +29,8 @@
 //重新更新一次LS及更新一次網頁上的畫面
 
 var btn = document.querySelector('.btn')
+
+btn.addEventListener('click', addList, false)
+function addList (e) {
+  
+}
