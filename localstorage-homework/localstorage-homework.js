@@ -29,11 +29,12 @@
 //重新更新一次LS及更新一次網頁上的畫面
 
 var btn = document.querySelector('.btn')
-
+var data = []
 btn.addEventListener('click', addList, false)
 function addList (e) {
   e.preventDefault()
   var text = document.querySelector('.text').value
   var textStr = JSON.stringify(text)
   localStorage.setItem('toDoList', textStr)
+
 }
