@@ -28,4 +28,4 @@
 //所以在寫顯示在網頁上的代辦事項也要有data-num=i
 //重新更新一次LS及更新一次網頁上的畫面
 
-
+var btn = document.querySelector('.btn')
