@@ -63,5 +63,6 @@ function updateList (items) {
 
 ul.addEventListener('click',deleList,false)
 function deleList(e){
+  e.preventDefault()
   
 }
