@@ -1,64 +1,31 @@
-//1. 綁定DOM元素UL、btn、準備可以存進資料的陣列或空陣列
+//第三次寫
+//1.讓輸入的代辦事項存入localStorage中
+//綁定HTML的按鈕
+//監聽點了btn後觸發function addList 去新增代辦事項
+//防止按下按鈕的預設行為
+//必須先取得輸入代辦事項文字的值
+//將輸入的文字的值轉為字串 stringify
+//轉為字串的值再存入LS中
+//讓輸入的文字可以物件形式存入
+//LS必須先有一個空陣列
 
-//為什麼要綁定?
-//UL:為了監聽指定a連結-刪除被點擊後可以觸發刪除LI的代辦事項
-//btn:為了監聽按下按鈕時可以觸發點擊事件去執行存資料進去localStorage中，
-//及代辦事項以list形式顯示在網頁上
-//data:為了預備儲存的資料庫轉成陣列或空陣列:為了輸入的代辦事項可以陣列方式儲存進去，
-//方便後續取用在網頁上呈現
+//2.讓localStorage的代辦事項可以呈現在網頁上，
+//呈現的樣子: 一個A連結"刪除" 後面加上代辦事項文字
 
-//2. 三個function
-//(1)addList + addEventListener
-//用btn綁定監聽，點按鈕去觸發增加代辦事項進去localStorage中
+//單獨一個function updateList
+//使用方法:以呼叫function去執行
+//先有一個空字串
+//再跑for loop，讓空字串自行加總組裝代辦事項後呈現在網頁上
+//3.為了讓每次重新整理網頁時、新增及刪除代辦事項時，都會自動更新一次代辦事項內容
 
-//(2)updateList 預設每次都先更新資料庫
-//不須綁定，只要寫一個function放在對的位置去執行即可
+//4.按下A連結的刪除時，可以同時刪除網頁上及localStorage的代辦事項
+//綁定UL去監聽按了連結的刪除後，觸發刪除的行為
+//停止按下連結後預設行為
+//確定滑鼠按到的是否為A連結
+//若不是A連結則停止後續刪除行為
+//若是A連結則執行後續刪除行為:
+//按了A連結可以刪除該代辦項目-data-num
+//所以在寫顯示在網頁上的代辦事項也要有data-num=i
+//重新更新一次LS及更新一次網頁上的畫面
 
-//(3)deleList + addEventListener
-//綁定ul，監聽ul中的刪除連結被點擊後，去執行刪除代辦事項的動作
 
-var btn = document.querySelector('.btn')
-var ul = document.querySelector('.list')
-var data = JSON.parse(localStorage.getItem('toDoList')) || []
-
-btn.addEventListener('click', addList, false)
-ul.addEventListener('click', deleList, false)
-updateList(data) //預設每次都更新一次
-
-function addList (e) {
-  e.preventDefault()
-  var text = document.querySelector('.text').value
-  var todo = { content: text }
-  data.push(todo)
-  var textStr = JSON.stringify(data)
-  updateList(data)
-  localStorage.setItem('toDoList', textStr)
-}
-
-function updateList (items) {
-  //不懂洧杰這裡(data)為什麼要用items ?
-  var str = ''
-  var len = items.length
-  var i
-  for (i = 0; i < len; i++) {
-    str +=
-      '<li ><a href="#" data-num=' +
-      i +
-      '>刪除</a> <span>' +
-      items[i].content +
-      '</span></li>'
-  }
-  ul.innerHTML = str
-}
-
-function deleList (e) {
-  e.preventDefault()
-
-  if (e.target.nodeName !== 'A') {
-    return
-  }
-  var num = e.target.dataset.num
-  data.splice(num, 1)
-  localStorage.setItem('toDoList', JSON.stringify(data))
-  updateList(data)
-}
