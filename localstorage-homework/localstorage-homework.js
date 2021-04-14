@@ -6,8 +6,9 @@
 //必須先取得輸入代辦事項文字的值
 //將輸入的文字的值轉為字串 stringify
 //轉為字串的值再存入LS中
-//讓輸入的文字可以物件形式存入
 //LS必須先有一個空陣列
+//讓輸入的文字可以物件形式存入
+
 
 //2.讓localStorage的代辦事項可以呈現在網頁上，
 //呈現的樣子: 一個A連結"刪除" 後面加上代辦事項文字
@@ -34,7 +35,7 @@ btn.addEventListener('click', addList, false)
 function addList (e) {
   e.preventDefault()
   var text = document.querySelector('.text').value
-  var textStr = JSON.stringify(text)
+  var object = { content: text }
+  var textStr = JSON.stringify(object)
   localStorage.setItem('toDoList', textStr)
-
 }
