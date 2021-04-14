@@ -55,14 +55,23 @@ function updateList (items) {
   var str = ''
   var i
   for (i = 0; i < items.length; i++) {
-    str += '<li><a href="#">刪除</a><span>' + items[i].content + '</span></li>'
+    str +=
+      '<li><a href="#" data-num=' +
+      i +
+      '>刪除</a><span>' +
+      items[i].content +
+      '</span></li>'
   }
   JSON.parse(localStorage.getItem('toDoList'))
   ul.innerHTML = str
 }
 
-ul.addEventListener('click',deleList,false)
-function deleList(e){
+ul.addEventListener('click', deleList, false)
+function deleList (e) {
   e.preventDefault()
-  
+  if (e.target.nodeName == 'A') {
+    var index = e.target.dataset
+    data.splice(index, 1)
+    updateList(data)
+  }
 }
