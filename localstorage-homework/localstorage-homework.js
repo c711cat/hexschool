@@ -15,6 +15,8 @@
 
 //單獨一個function updateList
 //使用方法:以呼叫function去執行
+//function(參數)，參數是data，data是輸入的代辦事項，將參數命名為items(items=data)
+//讓輸入代辦事項後呼叫function就會執行更新及呈現在網頁上
 //先有一個空字串
 //再跑for loop，讓空字串自行加總組裝代辦事項後呈現在網頁上
 //3.為了讓每次重新整理網頁時、新增及刪除代辦事項時，都會自動更新一次代辦事項內容
@@ -39,9 +41,13 @@ function addList (e) {
   data.push(object)
   var textStr = JSON.stringify(object)
   localStorage.setItem('toDoList', textStr)
+  updateList(data)
 }
 
-function updateList(e){
-  var str =''
-  
+function updateList (items) {
+  var str = ''
+  var i
+  for (i = 0; i < items.length; i++) {
+
+  }
 }
