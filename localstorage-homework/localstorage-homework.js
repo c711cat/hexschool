@@ -9,7 +9,6 @@
 //LS必須先有一個空陣列
 //讓輸入的文字可以物件形式存入
 
-
 //2.讓localStorage的代辦事項可以呈現在網頁上，
 //呈現的樣子: 一個A連結"刪除" 後面加上代辦事項文字
 
@@ -36,6 +35,7 @@ function addList (e) {
   e.preventDefault()
   var text = document.querySelector('.text').value
   var object = { content: text }
+  data.push(object)
   var textStr = JSON.stringify(object)
   localStorage.setItem('toDoList', textStr)
 }
