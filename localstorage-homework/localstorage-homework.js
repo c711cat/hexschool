@@ -34,5 +34,6 @@ btn.addEventListener('click', addList, false)
 function addList (e) {
   e.preventDefault()
   var text = document.querySelector('.text').value
+  var textStr = JSON.stringify(text)
   
 }
