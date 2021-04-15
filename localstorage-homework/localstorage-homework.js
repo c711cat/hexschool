@@ -32,6 +32,7 @@
 //按了A連結可以刪除該代辦項目-data-num
 //所以在寫顯示在網頁上的代辦事項也要有data-num=i
 //重新更新一次LS及更新一次網頁上的畫面
+//LS中也要一起刪除該代辦事項
 
 var btn = document.querySelector('.btn')
 var ul = document.querySelector('.list')
@@ -72,6 +73,9 @@ function deleList (e) {
   if (e.target.nodeName == 'A') {
     var index = e.target.dataset
     data.splice(index, 1)
+
+    var deleLi = JSON.stringify(data)
     updateList(data)
+    localStorage.setItem('toDoList', deleLi)
   }
 }
