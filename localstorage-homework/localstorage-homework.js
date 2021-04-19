@@ -34,22 +34,28 @@
 //重新更新一次LS及更新一次網頁上的畫面
 //LS中也要一起刪除該代辦事項
 
+//Q:LS不會累加代辦事項-要讓LS中可累加物件在陣列中
+//Q:重新整理後不會顯示之前輸入的代辦事項-要重整後網頁可以呈現之前的輸入的代辦事項
+
 var btn = document.querySelector('.btn')
 var ul = document.querySelector('.list')
-var data = []
-
+//var array = JSON.parse(localStorage.getItem('toDoList')) || []
+var array = JSON.parse(localStorage.getItem('toDoList'))
+if (array == null) {
+  array = []
+}
 btn.addEventListener('click', addList, false)
-updateList(data)
+updateList(array)
 
 function addList (e) {
   e.preventDefault()
-  var text = document.querySelector('.text').value
-  var object = { content: text }
-  data.push(object)
 
-  var textStr = JSON.stringify(object)
-  updateList(data)
-  localStorage.setItem('toDoList', textStr)
+  var text = document.querySelector('.text').value
+  array.push({ content: text })
+  var str = JSON.stringify(array)
+  localStorage.setItem('toDoList', str)
+
+  updateList(array)
 }
 
 function updateList (items) {
@@ -72,10 +78,10 @@ function deleList (e) {
   e.preventDefault()
   if (e.target.nodeName == 'A') {
     var index = e.target.dataset
-    data.splice(index, 1)
+    array.splice(index, 1)
 
-    var deleLi = JSON.stringify(data)
-    updateList(data)
+    var deleLi = JSON.stringify(array)
+    updateList(array)
     localStorage.setItem('toDoList', deleLi)
   }
 }
