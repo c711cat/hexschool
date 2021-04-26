@@ -18,5 +18,5 @@ btn.addEventListener('click', addList, false)
 function addList (e) {
   var text = document.querySelector('.text').value
   data.push(text)
-  
+  JSON.stringify(localStorage.setItem('todolist', data))
 }
