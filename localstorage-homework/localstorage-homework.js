@@ -3,7 +3,6 @@
 //綁定btn按鈕，讓點擊按鈕時觸發事件，去存入代辦事項到LS中:function addList
 //將代辦事項陣列化-需要有一個空陣列及可能已經有代辦事項的陣列，可進行新增及刪除
 
-
 //2.讓LS中的代辦事項轉出顯示在網頁上及自動更新網頁上的代辦事項:function updateList
 //以呼叫function的方式執行，放在開頭、新增及刪除位置
 //以組字串方式+innerHTML呈現
@@ -14,3 +13,10 @@
 var btn = document.querySelector('.btn')
 var data = JSON.parse(localStorage.getItem('todolist')) || []
 var ul = document.querySelector('.list')
+
+btn.addEventListener('click', addList, false)
+function addList (e) {
+  var text = document.querySelector('.text').value
+  data.push(text)
+  
+}
