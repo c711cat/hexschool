@@ -10,3 +10,7 @@
 
 //3.刪除代辦事項可連同LS中一起刪除，並重整一次網頁上的代辦事項:function deleList
 //綁定UL，若點擊到UL的範圍時，可以觸發刪除事件
+
+var btn = document.querySelector('.btn')
+var data = JSON.parse(localStorage.getItem('todolist')) || []
+var ul = document.querySelector('.list')
