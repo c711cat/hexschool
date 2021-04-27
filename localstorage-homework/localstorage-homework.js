@@ -13,7 +13,7 @@
 var btn = document.querySelector('.btn')
 var data = JSON.parse(localStorage.getItem('todolist')) || []
 var ul = document.querySelector('.list')
-
+updateList()
 btn.addEventListener('click', addList, false)
 function addList (e) {
   e.preventDefault()
@@ -21,4 +21,21 @@ function addList (e) {
   var object = { content: text }
   data.push(object)
   localStorage.setItem('todolist', JSON.stringify(data))
+  updateList()
+}
+
+function updateList (e) {
+  var i
+  var str = ''
+  for (i = 0; i < data.length; i++) {
+    str +=
+      '<li><a data-num=' +
+      i +
+      ' href="#">' +
+      '刪除' +
+      '</a><span>' +
+      data[i].content +
+      '</span></li>'
+  }
+  ul.innerHTML = str
 }
