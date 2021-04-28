@@ -14,6 +14,7 @@ var btn = document.querySelector('.btn')
 var data = JSON.parse(localStorage.getItem('todolist')) || []
 var ul = document.querySelector('.list')
 updateList()
+
 btn.addEventListener('click', addList, false)
 function addList (e) {
   e.preventDefault()
@@ -24,7 +25,7 @@ function addList (e) {
   updateList()
 }
 
-function updateList (e) {
+function updateList () {
   var i
   var str = ''
   for (i = 0; i < data.length; i++) {
@@ -38,4 +39,15 @@ function updateList (e) {
       '</span></li>'
   }
   ul.innerHTML = str
+}
+
+ul.addEventListener('click', deleList, false)
+function deleList (e) {
+  e.preventDefault()
+  if (e.target.nodeName == 'A') {
+    var number = e.target.dataset.num
+    data.splice(number, 1)
+    localStorage.setItem('todolist', JSON.stringify(data))
+  }
+  updateList()
 }
