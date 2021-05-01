@@ -7,7 +7,7 @@ console.log(localStorage.getItem('listData'))
 // 監聽與更新
 sendData.addEventListener('click', addData)
 list.addEventListener('click', toggleDone)
-
+updateList(data)
 //加入列表，並同步更新網頁與 localstorage
 function addData (e) {
   e.preventDefault()
@@ -41,6 +41,6 @@ function toggleDone (e) {
   }
   var index = e.target.dataset.index
   data.splice(index, 1)
-  localStorage.setItem('listDat', JSON.stringify(data))
+  localStorage.setItem('listData', JSON.stringify(data))
   updateList(data)
 }
