@@ -48,6 +48,6 @@ function deleList (e) {
     var number = e.target.dataset.num
     data.splice(number, 1)
     localStorage.setItem('todolist', JSON.stringify(data))
+    updateList()
   }
-  updateList()
 }
