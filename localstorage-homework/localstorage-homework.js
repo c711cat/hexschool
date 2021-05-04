@@ -20,7 +20,7 @@
 //讓代辦事項以LI的形式接在UL下方
 
 var btn = document.querySelector('.btn')
-var data = [] 
+var data = []
 var ul = document.querySelector('.list')
 btn.addEventListener('click', addList, false)
 function addList (e) {
@@ -46,4 +46,15 @@ function updateList (data) {
       '</span></li>'
   }
   ul.innerHTML = str
+}
+
+ul.addEventListener('click', deleList, false)
+function deleList (e) {
+  e.preventDefault()
+  if (e.target.nodeName == 'A') {
+    var number = e.target.dataset.num
+    data.splice(number, 1)
+    localStorage.setItem('todolist', JSON.stringify(data))
+    updateList(data)
+  }
 }
