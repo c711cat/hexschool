@@ -21,8 +21,9 @@
 
 var btn = document.querySelector('.btn')
 var data = JSON.parse(localStorage.getItem('todolist')) || []
-
 var ul = document.querySelector('.list')
+
+updateList(data)
 
 btn.addEventListener('click', addList, false)
 function addList (e) {
