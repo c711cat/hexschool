@@ -20,8 +20,8 @@
 //讓代辦事項以LI的形式接在UL下方
 
 var btn = document.querySelector('.btn')
-var data = []
-
+var data = [] 
+var ul = document.querySelector('.list')
 btn.addEventListener('click', addList, false)
 function addList (e) {
   e.preventDefault()
@@ -29,4 +29,21 @@ function addList (e) {
   var object = { content: text }
   data.push(object)
   localStorage.setItem('todolist', JSON.stringify(data))
+  updateList(data)
+}
+
+function updateList (data) {
+  var str = ''
+  var i
+  for (i = 0; i < data.length; i++) {
+    str +=
+      '<li><a data-num=' +
+      i +
+      ' href="#">' +
+      '刪除' +
+      '</a><span>' +
+      data[i].content +
+      '</span></li>'
+  }
+  ul.innerHTML = str
 }
