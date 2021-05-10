@@ -61,3 +61,64 @@ margin-top: 20px;
   background: #dea821;
   box-shadow: none;
 }
+
+.circle-out{
+  width: 120px;
+  height: 120px;
+  border-radius: 100%;
+  background: #86d73f;
+  position: relative;
+  margin-right: 10px;
+}
+.circle-in{
+  width: 108px;
+  height: 108px;
+  border-radius: 100%;
+  background: #424242;
+  position: absolute;
+  top: 6px;
+  left: 6.4px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 10px;
+}
+.BMI-result{
+  color: #86d73f;
+  line-height: 1.3;
+}
+.BMI-value{
+  font-size: 28px;
+}
+.BMI{
+  font-size: 10px;
+  text-align: center;
+}
+.ideal{
+  color: #86d73f;
+  font-size: 32px;
+  
+}
+.icon-loop-out{
+  width: 36px;
+  height: 36px;
+  border-radius: 100%;
+  
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  bottom: 5px;
+  right: 0px;
+  background: #424242;
+}
+.icon-loop-in{
+  width: 30px;
+  height: 30px;
+  border-radius: 100%;
+  background: #86d73f;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+}
