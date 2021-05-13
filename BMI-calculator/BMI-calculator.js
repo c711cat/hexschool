@@ -3,21 +3,10 @@ var kg = document.querySelector('.weight').value
 var btnAndResult = document.querySelector('.btn-and-result')
 
 renew()
-// function renew () {
-//   var str = ''
-//   cm = ''
-//   kg = ''
-//   str +=
-//     '<div class="result-btn"> <input type="button" value= "看結果" /> </div>'
-//   btnAndResult.innerHTML = str
-// }
 
 function renew () {
   var str = ''
-  if (cm === '' && kg === '') {
-    str +=
-      '<div class="result-btn"> <input type="button" value= "看結果" /> </div>'
-  }
+  str += `<div class="result-btn"> <input type="button" value= "看結果" /> </div>`
   btnAndResult.innerHTML = str
 }
 
@@ -130,10 +119,10 @@ function BMI (e) {
 btnAndResult.addEventListener('click', update, false)
 function update (e) {
   if (e.target.nodeName == 'IMG') {
-    renew()
+    document.querySelector('.height').value = ''
+    document.querySelector('.weight').value = ''
     var str = ''
-    str +=
-      '<div class="result-btn"> <input type="button" value= "看結果" /> </div>'
+    str += `<div class="result-btn"> <input type="button" value= "看結果" /> </div>`
     btnAndResult.innerHTML = str
   }
 }
