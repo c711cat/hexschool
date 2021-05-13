@@ -355,7 +355,7 @@ margin-top: 20px;
 .medium{
   background: #f5f5f5;
   padding-top: 50px;
-  padding-bottom: 10px;
+  padding-bottom: 50px;
 }
 .BMI-records{
   color: #424242;
@@ -474,4 +474,17 @@ margin-top: 20px;
   font-weight: bold;
   position: relative;
   margin-bottom: 17px;
+}
+/* footer */
+.footer{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  background: #424242;
+  
+}
+.footer img{
+  width: 50px;
 }
