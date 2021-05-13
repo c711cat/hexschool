@@ -116,3 +116,14 @@ function BMI (e) {
   }
   btnAndResult.innerHTML = str
 }
+
+
+btnAndResult.addEventListener('click', update, false)
+function update (e) {
+  if (e.target.nodeName == 'IMG') {
+    var str = ''
+    str +=
+      '<div class="result-btn"> <input type="button" value= "看結果" /> </div>'
+    btnAndResult.innerHTML = str
+  }
+}
