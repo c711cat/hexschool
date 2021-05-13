@@ -1,10 +1,13 @@
-var cm = document.querySelector('.height').value
-var kg = document.querySelector('.weight').value
+//var cm = document.querySelector('.height').value
+//var kg = document.querySelector('.weight').value
 var btnAndResult = document.querySelector('.btn-and-result')
 
 renew()
 
 function renew () {
+  console.log('renew-f')
+  document.querySelector('.height').value = ''
+  document.querySelector('.weight').value = ''
   var str = ''
   str += `<div class="result-btn"> <input type="button" value= "看結果" /> </div>`
   btnAndResult.innerHTML = str
@@ -15,9 +18,10 @@ var resultBtn = document.querySelector('.result-btn')
 resultBtn.addEventListener('click', BMI, false)
 
 function BMI (e) {
+  console.log('BMI-f')
   var str = ''
-  cm = document.querySelector('.height').value
-  kg = document.querySelector('.weight').value
+  var cm = document.querySelector('.height').value
+  var kg = document.querySelector('.weight').value
   var bmi = kg / (cm / 100) / (cm / 100)
   bmi = bmi.toFixed(2)
   if (cm === '' || kg === '') {
@@ -118,11 +122,14 @@ function BMI (e) {
 
 btnAndResult.addEventListener('click', update, false)
 function update (e) {
+  console.log('update-f')
   if (e.target.nodeName == 'IMG') {
     document.querySelector('.height').value = ''
     document.querySelector('.weight').value = ''
     var str = ''
     str += `<div class="result-btn"> <input type="button" value= "看結果" /> </div>`
     btnAndResult.innerHTML = str
+    renew()
   }
+  BMI()
 }
