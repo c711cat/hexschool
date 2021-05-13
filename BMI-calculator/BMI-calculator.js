@@ -3,6 +3,14 @@ var kg = document.querySelector('.weight').value
 var btnAndResult = document.querySelector('.btn-and-result')
 
 renew()
+// function renew () {
+//   var str = ''
+//   cm = ''
+//   kg = ''
+//   str +=
+//     '<div class="result-btn"> <input type="button" value= "看結果" /> </div>'
+//   btnAndResult.innerHTML = str
+// }
 
 function renew () {
   var str = ''
@@ -23,7 +31,9 @@ function BMI (e) {
   kg = document.querySelector('.weight').value
   var bmi = kg / (cm / 100) / (cm / 100)
   bmi = bmi.toFixed(2)
-  if (bmi < 18.5) {
+  if (cm === '' || kg === '') {
+    str += `<div class="result-btn"> <input type="button" value= "看結果" /> </div>`
+  } else if (bmi < 18.5) {
     str += `<div class="underweight-circle-out">
           <div class="circle-in">
             <div class="underweight-BMI-result">
@@ -117,10 +127,10 @@ function BMI (e) {
   btnAndResult.innerHTML = str
 }
 
-
 btnAndResult.addEventListener('click', update, false)
 function update (e) {
   if (e.target.nodeName == 'IMG') {
+    renew()
     var str = ''
     str +=
       '<div class="result-btn"> <input type="button" value= "看結果" /> </div>'
