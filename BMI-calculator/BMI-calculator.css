@@ -351,3 +351,127 @@ margin-top: 20px;
   justify-content: center;
   align-items: center;
 }
+/* ideal-bar */
+.medium{
+  background: #f5f5f5;
+  padding-top: 50px;
+  padding-bottom: 10px;
+}
+.BMI-records{
+  color: #424242;
+  font-size: 18px;
+  font-weight: bold;
+  text-align: center;
+  padding-bottom: 33px;
+}
+.ideal-bar{
+  width: 700px;
+  height: 60px;
+  background: #fff;
+  margin: 0 auto;
+  border-left: #86d73f solid 7px;
+  display: flex;
+  align-items: center;
+  color: #4a4a4a;
+  font-weight: bold;
+  position: relative;
+  margin-bottom: 17px;
+}
+.bar-text{
+  font-size: 18px;
+  position: absolute;
+  left: 10px;
+}
+.bar-BMI   {
+  font-size: 10px;
+  position: absolute;
+  right: 525px;
+}
+
+.bar-BMI-value  {
+  font-size: 18px;
+  position: absolute;
+  right: 470px;
+}
+.bar-weight{
+  font-size: 10px;
+  position: absolute;
+  right: 365px;
+}
+.bar-kg{
+  font-size: 18px;
+  position: absolute;
+  right: 315px;
+}
+.bar-height{
+  font-size: 10px;
+  position: absolute;
+  right: 215px;
+}
+.bar-cm{
+  font-size: 18px;
+  position: absolute;
+  right: 150px;
+}
+.bar-date{
+  font-size: 10px;
+  position: absolute;
+  right: 10px;
+}
+/* underweight-bar */
+.underweight-bar{
+  width: 700px;
+  height: 60px;
+  background: #fff;
+  margin: 0 auto;
+  border-left: #31baf9 solid 7px;
+  display: flex;
+  align-items: center;
+  color: #4a4a4a;
+  font-weight: bold;
+  position: relative;
+  margin-bottom: 17px;
+}
+/* overweight-bar */
+.overweight-bar{
+  width: 700px;
+  height: 60px;
+  background: #fff;
+  margin: 0 auto;
+  border-left: #ff982d solid 7px;
+  display: flex;
+  align-items: center;
+  color: #4a4a4a;
+  font-weight: bold;
+  position: relative;
+  margin-bottom: 17px;
+}
+
+/* mild-and-moderate-obesity-bar */
+.mild-and-moderate-obesity-bar{
+  width: 700px;
+  height: 60px;
+  background: #fff;
+  margin: 0 auto;
+  border-left: #ff6c03 solid 7px;
+  display: flex;
+  align-items: center;
+  color: #4a4a4a;
+  font-weight: bold;
+  position: relative;
+  margin-bottom: 17px;
+}
+/* severe-obesity-bar */
+.severe-obesity-bar{
+  width: 700px;
+  height: 60px;
+  background: #fff;
+  margin: 0 auto;
+  border-left: #ff1200 solid 7px;
+  display: flex;
+  align-items: center;
+  color: #4a4a4a;
+  font-weight: bold;
+  position: relative;
+  margin-bottom: 17px;
+}
