@@ -118,6 +118,27 @@ function BMI (e) {
         <span class="severe-obesity">重度肥胖</span>`
   }
   btnAndResult.innerHTML = str
+  function addData (e) {
+    var posture = document.querySelector('.banner span').textContent
+    var bmiValue = document.querySelector('.BMI-value').textContent
+    var fullTime = new Date()
+    var year = fullTime.getFullYear()
+    var month = ('0' + (fullTime.getMonth() + 1)).substr(-2)
+    var date = ('0' + fullTime.getDate()).substr(-2)
+    var allTime = month + '-' + date + '-' + year
+    var personData = []
+    var personObject = {
+      status: posture,
+      BMI: bmiValue,
+      weight: kg + 'kg',
+      height: cm + 'cm',
+      time: allTime
+    }
+    personData.push(personObject)
+
+    localStorage.setItem('BMI-Data', JSON.stringify(personData))
+  }
+  addData()
 }
 
 btnAndResult.addEventListener('click', update, false)
