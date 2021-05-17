@@ -11,10 +11,9 @@ function renew () {
   var str = ''
   str += `<div class="result-btn"> <input type="button" value= "看結果" /> </div>`
   btnAndResult.innerHTML = str
+  resultBtn = document.querySelector('.result-btn')
+  resultBtn.addEventListener('click', BMI, false)
 }
-
-resultBtn = document.querySelector('.result-btn')
-resultBtn.addEventListener('click', BMI, false)
 
 function BMI (e) {
   console.log('BMI-f')
@@ -119,6 +118,10 @@ function BMI (e) {
   }
   btnAndResult.innerHTML = str
 
+  document
+    .querySelector('.icon-loop-out')
+    .addEventListener('click', update, false)
+
   addData()
   addBar(personData)
 }
@@ -208,7 +211,6 @@ function addBar (personData) {
   }
 }
 
-btnAndResult.addEventListener('click', update, false)
 function update (e) {
   e.stopPropagation()
   console.log('update-f')
