@@ -1,7 +1,7 @@
-//var cm = document.querySelector('.height').value
-//var kg = document.querySelector('.weight').value
 var btnAndResult = document.querySelector('.btn-and-result')
-
+var resultBtn
+var personData
+var bmi
 renew()
 
 function renew () {
@@ -13,8 +13,7 @@ function renew () {
   btnAndResult.innerHTML = str
 }
 
-var resultBtn = document.querySelector('.result-btn')
-
+resultBtn = document.querySelector('.result-btn')
 resultBtn.addEventListener('click', BMI, false)
 
 function BMI (e) {
@@ -118,27 +117,95 @@ function BMI (e) {
         <span class="severe-obesity">重度肥胖</span>`
   }
   btnAndResult.innerHTML = str
-  function addData (e) {
-    var posture = document.querySelector('.banner span').textContent
-    var bmiValue = document.querySelector('.BMI-value').textContent
-    var fullTime = new Date()
-    var year = fullTime.getFullYear()
-    var month = ('0' + (fullTime.getMonth() + 1)).substr(-2)
-    var date = ('0' + fullTime.getDate()).substr(-2)
-    var allTime = month + '-' + date + '-' + year
-    var personData = []
-    var personObject = {
-      status: posture,
-      BMI: bmiValue,
-      weight: kg + 'kg',
-      height: cm + 'cm',
-      time: allTime
-    }
-    personData.push(personObject)
 
-    localStorage.setItem('BMI-Data', JSON.stringify(personData))
-  }
   addData()
+  addBar(personData)
+}
+
+function addData (e) {
+  console.log('addData-f')
+  var posture = document.querySelector('.banner span').textContent
+  var bmiValue = document.querySelector('.BMI-value').textContent
+  var cm = document.querySelector('.height').value
+  var kg = document.querySelector('.weight').value
+  var fullTime = new Date()
+  var year = fullTime.getFullYear()
+  var month = ('0' + (fullTime.getMonth() + 1)).substr(-2)
+  var date = ('0' + fullTime.getDate()).substr(-2)
+  var allTime = month + '-' + date + '-' + year
+  personData = JSON.parse(localStorage.getItem('BMI-Data')) || []
+  var personObject = {
+    status: posture,
+    BMI: bmiValue,
+    weight: kg + 'kg',
+    height: cm + 'cm',
+    time: allTime
+  }
+  personData.push(personObject)
+  localStorage.setItem('BMI-Data', JSON.stringify(personData))
+}
+
+function addBar (personData) {
+  console.log('addBar-f')
+  var bmiRecords = document.querySelector('.BMI-records')
+  var i
+  var str = ''
+
+  for (i = 0; i < personData.length; i++) {
+    if (bmi < 18.5) {
+      str += `<div class="underweight-bar">
+      <span class="bar-text">${personData[i].status}</span
+      ><span class="bar-BMI">BMI</span
+      ><span class="bar-BMI-value">${personData[i].BMI}</span
+      ><span class="bar-weight">weight</span><span class="bar-kg">${personData[i].weight}</span
+      ><span class="bar-height">height</span
+      ><span class="bar-cm">${personData[i].height}</span
+      ><span class="bar-date">${personData[i].time}</span>
+    </div>`
+    } else if (18.5 <= bmi && bmi < 24) {
+      str += `<div class="ideal-bar">
+      <span class="bar-text">${personData[i].status}</span
+      ><span class="bar-BMI">BMI</span
+      ><span class="bar-BMI-value">${personData[i].BMI}</span
+      ><span class="bar-weight">weight</span><span class="bar-kg">${personData[i].weight}</span
+      ><span class="bar-height">height</span
+      ><span class="bar-cm">${personData[i].height}</span
+      ><span class="bar-date">${personData[i].time}</span>
+    </div>`
+    } else if (24 <= bmi && bmi < 27) {
+      str += `<div class="overweight-bar">
+        <span class="bar-text">${personData[i].status}</span
+        ><span class="bar-BMI">BMI</span
+        ><span class="bar-BMI-value">${personData[i].BMI}</span
+        ><span class="bar-weight">weight</span><span class="bar-kg">${personData[i].weight}</span
+        ><span class="bar-height">height</span
+        ><span class="bar-cm">${personData[i].height}</span
+        ><span class="bar-date">${personData[i].time}</span>
+      </div>`
+    } else if (27 <= bmi && bmi < 34) {
+      str += `<div class="mild-and-moderate-obesity-bar">
+        <span class="bar-text">${personData[i].status}</span
+        ><span class="bar-BMI">BMI</span
+        ><span class="bar-BMI-value">${personData[i].BMI}</span
+        ><span class="bar-weight">weight</span><span class="bar-kg">${personData[i].weight}</span
+        ><span class="bar-height">height</span
+        ><span class="bar-cm">${personData[i].height}</span
+        ><span class="bar-date">${personData[i].time}</span>
+      </div>`
+    } else if (bmi >= 34) {
+      str += `<div class="severe-obesity-bar">
+        <span class="bar-text">${personData[i].status}</span
+        ><span class="bar-BMI">BMI</span
+        ><span class="bar-BMI-value">${personData[i].BMI}</span
+        ><span class="bar-weight">weight</span><span class="bar-kg">${personData[i].weight}</span
+        ><span class="bar-height">height</span
+        ><span class="bar-cm">${personData[i].height}</span
+        ><span class="bar-date">${personData[i].time}</span>
+      </div>`
+    }
+    console.log(str)
+    bmiRecords.innerHTML = str
+  }
 }
 
 btnAndResult.addEventListener('click', update, false)
