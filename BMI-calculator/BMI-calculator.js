@@ -18,6 +18,7 @@ resultBtn.addEventListener('click', BMI, false)
 
 function BMI (e) {
   console.log('BMI-f')
+  e.stopPropagation()
   var str = ''
   var cm = document.querySelector('.height').value
   var kg = document.querySelector('.weight').value
@@ -209,13 +210,11 @@ function addBar (personData) {
 
 btnAndResult.addEventListener('click', update, false)
 function update (e) {
+  e.stopPropagation()
   console.log('update-f')
   if (e.target.nodeName == 'IMG') {
     document.querySelector('.height').value = ''
     document.querySelector('.weight').value = ''
-    var str = ''
-    str += `<div class="result-btn"> <input type="button" value= "看結果" /> </div>`
-    btnAndResult.innerHTML = str
     renew()
   }
 }
