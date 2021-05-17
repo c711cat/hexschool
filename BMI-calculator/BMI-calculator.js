@@ -17,7 +17,6 @@ function renew () {
 
 function BMI (e) {
   console.log('BMI-f')
-  e.stopPropagation()
   var str = ''
   var cm = document.querySelector('.height').value
   var kg = document.querySelector('.weight').value
@@ -212,7 +211,6 @@ function addBar (personData) {
 }
 
 function update (e) {
-  e.stopPropagation()
   console.log('update-f')
   if (e.target.nodeName == 'IMG') {
     document.querySelector('.height').value = ''
