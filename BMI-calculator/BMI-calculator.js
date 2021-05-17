@@ -150,10 +150,9 @@ function addBar (personData) {
   var bmiRecords = document.querySelector('.BMI-records')
   var i
   var str = ''
-  var bmi = document.querySelector('.BMI-value').textContent
+  bmi = document.querySelector('.BMI-value').textContent
   for (i = 0; i < personData.length; i++) {
     if (bmi < 18.5) {
-      console.log('18.5')
       str += `<div class="underweight-bar">
         <span class="bar-text">${personData[i].status}</span
         ><span class="bar-BMI">BMI</span
@@ -219,5 +218,4 @@ function update (e) {
     btnAndResult.innerHTML = str
     renew()
   }
-  BMI()
 }
