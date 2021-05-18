@@ -13,6 +13,7 @@ function renew () {
   btnAndResult.innerHTML = str
   resultBtn = document.querySelector('.result-btn')
   resultBtn.addEventListener('click', BMI, false)
+  addBar(personData)
 }
 
 function BMI (e) {
