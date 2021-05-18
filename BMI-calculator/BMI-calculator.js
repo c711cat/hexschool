@@ -1,6 +1,6 @@
 var btnAndResult = document.querySelector('.btn-and-result')
 var resultBtn
-var personData
+var personData = JSON.parse(localStorage.getItem('BMI-Data')) || []
 var bmi
 renew()
 
@@ -136,7 +136,7 @@ function addData (e) {
   var month = ('0' + (fullTime.getMonth() + 1)).substr(-2)
   var date = ('0' + fullTime.getDate()).substr(-2)
   var allTime = month + '-' + date + '-' + year
-  personData = JSON.parse(localStorage.getItem('BMI-Data')) || []
+
   var personObject = {
     status: posture,
     BMI: bmiValue,
@@ -144,6 +144,7 @@ function addData (e) {
     height: cm + 'cm',
     time: allTime
   }
+
   personData.push(personObject)
   localStorage.setItem('BMI-Data', JSON.stringify(personData))
 }
@@ -153,9 +154,8 @@ function addBar (personData) {
   var bmiRecords = document.querySelector('.BMI-records')
   var i
   var str = ''
-  bmi = document.querySelector('.BMI-value').textContent
   for (i = 0; i < personData.length; i++) {
-    if (bmi < 18.5) {
+    if (personData[i].BMI < 18.5) {
       str += `<div class="underweight-bar">
         <span class="bar-text">${personData[i].status}</span
         ><span class="bar-BMI">BMI</span
@@ -165,7 +165,7 @@ function addBar (personData) {
         ><span class="bar-cm">${personData[i].height}</span
         ><span class="bar-date">${personData[i].time}</span>
       </div>`
-    } else if (18.5 <= bmi && bmi < 24) {
+    } else if (18.5 <= personData[i].BMI && personData[i].BMI < 24) {
       str += `<div class="ideal-bar">
         <span class="bar-text">${personData[i].status}</span
         ><span class="bar-BMI">BMI</span
@@ -175,7 +175,7 @@ function addBar (personData) {
         ><span class="bar-cm">${personData[i].height}</span
         ><span class="bar-date">${personData[i].time}</span>
       </div>`
-    } else if (24 <= bmi && bmi < 27) {
+    } else if (24 <= personData[i].BMI && personData[i].BMI < 27) {
       str += `<div class="overweight-bar">
           <span class="bar-text">${personData[i].status}</span
           ><span class="bar-BMI">BMI</span
@@ -185,7 +185,7 @@ function addBar (personData) {
           ><span class="bar-cm">${personData[i].height}</span
           ><span class="bar-date">${personData[i].time}</span>
         </div>`
-    } else if (27 <= bmi && bmi < 34) {
+    } else if (27 <= personData[i].BMI && personData[i].BMI < 34) {
       str += `<div class="mild-and-moderate-obesity-bar">
           <span class="bar-text">${personData[i].status}</span
           ><span class="bar-BMI">BMI</span
@@ -195,7 +195,7 @@ function addBar (personData) {
           ><span class="bar-cm">${personData[i].height}</span
           ><span class="bar-date">${personData[i].time}</span>
         </div>`
-    } else if (bmi >= 34) {
+    } else if (personData[i].BMI >= 34) {
       str += `<div class="severe-obesity-bar">
           <span class="bar-text">${personData[i].status}</span
           ><span class="bar-BMI">BMI</span
